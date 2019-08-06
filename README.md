@@ -11,7 +11,7 @@ Code Fellows 401d5 labs 1-10
 * Travis Cox
 
 #### Files:
-* [Main](basics/Main.java)
+* [Main.java](basics/Main.java)
 
 #### Methods:
 * pluralize(String toPlural, int count)

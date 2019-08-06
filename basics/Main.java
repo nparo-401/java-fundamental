@@ -9,14 +9,14 @@ public class Main {
     int catCount = 2;
     int turtleCount = 0;
 
-    System.out.println("I own " + dogCount + " " + pluralize("dog", dogCount) + ".");
-    System.out.println("I own " + catCount + " " + pluralize("cat", catCount) + ".");
-    System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCount) + ".");
+    System.out.printf("I own %d %s.\n", dogCount, pluralize("dog", dogCount));
+    System.out.printf("I own %d %s.\n", catCount, pluralize("cat", catCount));
+    System.out.printf("I own %d %s.\n", turtleCount, pluralize("turtle", turtleCount));
 
 //    Flip N Heads
     flipNHeads(1);
     flipNHeads(4);
-    flipNHeads(6);
+    flipNHeads(-6);
 
 //    Clock
     clock();
@@ -32,7 +32,7 @@ public class Main {
   public static void flipNHeads(int n) {
     int count = 0;
     int inRow = 0;
-    while (inRow != n) {
+    while (inRow < n) {
       double randFlip = Math.random();
       if (randFlip < 0.5) {
         inRow = 0;
@@ -43,9 +43,7 @@ public class Main {
       }
       count++;
     }
-    String flip = pluralize("flip", count);
-    String head = pluralize("head", n);
-    System.out.printf("It took %d %s to flip %d %s in a row.\n", count, flip, n, head);
+    System.out.printf("It took %d %s to flip %d %s in a row.\n", count, pluralize("flip", count), n, pluralize("head", n));
   }
 
   public static void clock() {

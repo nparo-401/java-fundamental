@@ -7,7 +7,7 @@ Code Fellows 401d5 labs 1-10
 <a name="lab01"></a>
 ## Lab 01 - Java Primitives and Control Flow 
 #### Resources:
-* [Timer](https://www.codota.com/code/java/classes/java.util.Timer) - https://www.codota.com/code/java/classes/java.util.Timer
+* Timer- https://www.codota.com/code/java/classes/java.util.Timer
 * Travis Cox
 
 #### Files:

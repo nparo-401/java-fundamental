@@ -20,6 +20,7 @@ public class Main {
 
 //    Clock
     clock();
+//    clock2();
   }
 
   public static String pluralize(String toPlural, int count) {
@@ -59,6 +60,23 @@ public class Main {
         System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern(pattern)));
       }
     };
+
     timer.scheduleAtFixedRate(task, delay, interval);
+  }
+
+  public static void clock2() {
+    int oldSec = LocalDateTime.now().getSecond();
+
+    while (true) {
+      LocalDateTime newTime = LocalDateTime.now();
+      int newHours = newTime.getHour();
+      int newMin = newTime.getMinute();
+      int newSec = newTime.getSecond();
+
+      if (oldSec != newSec) {
+        System.out.printf("%02d:%02d:%02d\n", newHours, newMin, newSec);
+        oldSec = newSec;
+      }
+    }
   }
 }

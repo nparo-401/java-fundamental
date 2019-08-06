@@ -2,12 +2,13 @@
 Code Fellows 401d5 labs 1-10
 
 ## Table of Contents
-[Lab 01](#lab01)
+* [Lab 01](#lab01)
+* [Lab 02](#lab02)
 
 <a name="lab01"></a>
 ## Lab 01 - Java Primitives and Control Flow 
 #### Resources:
-* Timer- https://www.codota.com/code/java/classes/java.util.Timer
+* [Timer](https://www.codota.com/code/java/classes/java.util.Timer)
 * Travis Cox
 
 #### Files:
@@ -20,3 +21,11 @@ Code Fellows 401d5 labs 1-10
   * Takes in an int for the number of heads in a row needed and uses a random number generator to "flip" a coin and repeat until n number of heads in a row is reached.
 * clock()
   * Uses a timer and the current date time to make a clock which prints once every second with the current time.
+
+<a name="lab02"></a>
+## Lab 02 - Arrays, for loops, imports, ArrayLists
+#### Resources:
+
+#### Files:
+
+#### Methods:

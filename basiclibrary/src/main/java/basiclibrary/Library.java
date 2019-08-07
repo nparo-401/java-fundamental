@@ -4,7 +4,7 @@ public class Library {
     public static int[] roll(int n) {
         int[] rolls = new int[n];
 
-        for (int i=0; i < rolls.length; i++){
+        for (int i = 0; i < rolls.length; i++){
             int ranRoll = (int)Math.ceil(Math.random() * 6);
             rolls[i] = ranRoll;
         }

@@ -6,9 +6,9 @@
 
 #### Files:
 * src/main
-  * [Library.java](basiclibrary/src/main/java/basiclibrary/Library.java)
+  * [Library.java](../basiclibrary/src/main/java/basiclibrary/Library.java)
 * src/test
-  * [LibraryTest.java](basiclibrary/src/test/java/basiclibrary/LibraryTest.java)
+  * [LibraryTest.java](../basiclibrary/src/test/java/basiclibrary/LibraryTest.java)
 
 #### Methods:
 * roll(int n)

@@ -14,10 +14,13 @@
     * [AppTest.java](../linter/src/test/java/linter/AppTest.java)
 
 #### Methods:
-* 
+**Basic Library**
+* weatherData(int[][] weatherArr)
   * 
-* 
+* tally(ArrayList<String> votes)
   * 
-* 
+
+**Linter**
+* readFile()
   * 
   

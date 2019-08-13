@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class RestaurantTest {
-  double delta = 0.000001;
+  private double delta = 0.000001;
 
   @Test
   public void testGetName() {

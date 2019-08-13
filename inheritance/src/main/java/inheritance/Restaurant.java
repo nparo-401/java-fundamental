@@ -32,6 +32,7 @@ public class Restaurant {
 
   public void addReview(Review review) {
     this.reviews.add(review);
+    review.setRestaurant(this);
     updateStars();
   }
 

@@ -4,11 +4,16 @@ public class Review {
   private String body;
   private String author;
   private double stars;
+  private Restaurant restaurant;
 
   Review(String body, String author, double stars) {
     this.body = body;
     this.author = author;
-    this.stars = stars;
+    if (stars > 5) {
+      this.stars = 5;
+    } else {
+      this.stars = stars;
+    }
   }
 
   public String getBody() {
@@ -21,6 +26,14 @@ public class Review {
 
   public double getStars() {
     return this.stars;
+  }
+
+  public void setRestaurant(Restaurant restaurant) {
+    this.restaurant = restaurant;
+  }
+
+  public Restaurant getRestaurant() {
+    return this.restaurant;
   }
 
   public String toReviewString() {

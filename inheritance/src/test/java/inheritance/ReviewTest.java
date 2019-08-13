@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ReviewTest {
+  private double delta = 0.000001;
 
   @Test
   public void testGetBody() {
@@ -34,8 +35,9 @@ public class ReviewTest {
 
     assertEquals(
         "testGetStars should return: ",
-        4,
-        review.getStars()
+        4.0,
+        review.getStars(),
+        delta
     );
   }
 
@@ -46,7 +48,7 @@ public class ReviewTest {
     assertEquals(
         "testToString should return: ",
         "Author: Joe Schmoe\n" +
-            "Number of Stars: 4\n" +
+            "Number of Stars: 4.0\n" +
             "Review: This restaurant was good\n",
         review.toReviewString()
     );

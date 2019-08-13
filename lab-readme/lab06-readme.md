@@ -6,7 +6,7 @@
 * [Rounding](https://stackoverflow.com/questions/8825209/rounding-decimal-points)
 
 #### Files:
-* basiclibrary
+* inheritance
   * src/main 
     * [Restaurant.java](../inheritance/src/main/java/inheritance/Restaurant.java)
     * [Review.java](../inheritance/src/main/java/inheritance/Review.java)

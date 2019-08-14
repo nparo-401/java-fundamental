@@ -158,7 +158,7 @@ public class TheaterTest {
     assertEquals(
         "testToString should return: ",
         "Name: Grand Hammer\n" +
-            "Stars: 4.0" +
+            "Stars: 4.0\n" +
             "Movies: Hebrew Hammer\n",
         theater.toString()
     );

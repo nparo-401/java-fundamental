@@ -1,5 +1,6 @@
-## Lab 06 - Composition and Inheritance, part 1
+## Lab 07 - Composition and Inheritance, part 2
 #### Resources:
+* Renee Messick
 * Travis Cox
 * Jack Kinne
 * Matt Stuhring
@@ -10,9 +11,13 @@
   * src/main 
     * [Restaurant.java](../inheritance/src/main/java/inheritance/Restaurant.java)
     * [Review.java](../inheritance/src/main/java/inheritance/Review.java)
+    * [Store.java](../inheritance/src/main/java/inheritance/Store.java)
+    * [Theater.java](../inheritance/src/main/java/inheritance/Theater.java)
   * src/test
     * [RestaurantTest.java](../inheritance/src/test/java/inheritance/RestaurantTest.java)
     * [ReviewTest.java](../inheritance/src/test/java/inheritance/ReviewTest.java)
+    * [StoreTest.java](../inheritance/src/test/java/inheritance/StoreTest.java)
+    * [TheaterTest.java](../inheritance/src/test/java/inheritance/StoreTest.java)
 
 #### Methods:
 **Restaurant**
@@ -61,3 +66,11 @@
     * returns an instance of the restaurant assigned to the review
   * `toString()`
     * returns the review as an organized string
+
+**Store**
+* Variables:
+* Methods:
+
+**Theater**
+* Variables:
+* Methods:

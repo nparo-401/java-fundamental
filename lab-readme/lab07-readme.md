@@ -66,6 +66,9 @@
   * `String author`
   * `double stars`
   * `Restaurant restaurant`
+  * `Shop shop`
+  * `Theater theater`
+  * `String movie`
 * Methods:
   * `getBody()`
     * returns the body of the review

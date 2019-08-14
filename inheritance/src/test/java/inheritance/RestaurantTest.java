@@ -11,7 +11,7 @@ public class RestaurantTest {
 
   @Test
   public void testGetName() {
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
 
     assertEquals(
         "testGetName should return: ",
@@ -22,11 +22,11 @@ public class RestaurantTest {
 
   @Test
   public void testGetStars() {
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
 
     assertEquals(
         "testGetName should return: ",
-        2.0,
+        0.0,
         testRestaurant.getStars(),
         delta
     );
@@ -34,31 +34,31 @@ public class RestaurantTest {
 
   @Test
   public void testGetPriceCategory() {
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
 
     assertEquals(
         "testGetName should return: ",
-        "$",
+        1,
         testRestaurant.getPriceCategory()
     );
   }
 
   @Test
   public void testGetReview_Empty() {
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
 
     assertEquals(
         "testGetReview_Empty should return: ",
       new ArrayList<>(),
-        testRestaurant.getReview()
+        testRestaurant.getReviews()
     );
   }
 
   @Test
   public void testGetReview_NotEmpty() {
     ArrayList<Review> testReview = new ArrayList<>();
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
-    Review review = new Review("This restaurant was good", "Joe Schmoe", 4);
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
+    Review review = new Review("This restaurant was good", "Joe Schmoe", 4, testRestaurant);
 
     testRestaurant.addReview(review);
     testReview.add(review);
@@ -66,25 +66,25 @@ public class RestaurantTest {
     assertEquals(
         "testGetReview_NotEmpty should return: ",
         testReview,
-        testRestaurant.getReview()
+        testRestaurant.getReviews()
     );
   }
 
   @Test
   public void testToString() {
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
 
     assertEquals(
         "testToString should return: ",
-        "Chipotle has a rating of 2.0 stars and is a $ price point",
+        "Chipotle is a $ price point",
         testRestaurant.toString()
     );
   }
 
   @Test
   public void testAddReview_AddOneReview() {
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
-    Review review = new Review("This restaurant was good", "Joe Schmoe", 4);
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
+    Review review = new Review("This restaurant was good", "Joe Schmoe", 4, testRestaurant);
     testRestaurant.addReview(review);
 
     assertEquals(
@@ -92,15 +92,15 @@ public class RestaurantTest {
         "Author: Joe Schmoe\n" +
             "Number of Stars: 4.0\n" +
             "Review: This restaurant was good\n",
-        testRestaurant.reviewToString()
+        testRestaurant.toReviewString()
     );
   }
 
   @Test
   public void testAddReview_AddMultipleReview() {
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
-    Review review = new Review("This restaurant was good", "Joe Schmoe", 4);
-    Review review1 = new Review("This restaurant was bad", "Jane Schmoe", 1);
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
+    Review review = new Review("This restaurant was good", "Joe Schmoe", 4, testRestaurant);
+    Review review1 = new Review("This restaurant was bad", "Jane Schmoe", 1, testRestaurant);
     testRestaurant.addReview(review);
     testRestaurant.addReview(review1);
 
@@ -112,19 +112,19 @@ public class RestaurantTest {
             "Author: Jane Schmoe\n" +
             "Number of Stars: 1.0\n" +
             "Review: This restaurant was bad\n",
-        testRestaurant.reviewToString()
+        testRestaurant.toReviewString()
     );
   }
 
   @Test
   public void testUpdateStars_AddOneReview() {
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
-    Review review = new Review("This restaurant was good", "Joe Schmoe", 4);
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
+    Review review = new Review("This restaurant was good", "Joe Schmoe", 4, testRestaurant);
     testRestaurant.addReview(review);
 
     assertEquals(
         "testUpdateStars_AddOneReview should return: ",
-        3.0,
+        4.0,
         testRestaurant.getStars(),
         delta
     );
@@ -132,15 +132,15 @@ public class RestaurantTest {
 
   @Test
   public void testUpdateStars_AddMultipleReview() {
-    Restaurant testRestaurant = new Restaurant("Chipotle", 2, "$");
-    Review review = new Review("This restaurant was good", "Joe Schmoe", 4);
-    Review review1 = new Review("This restaurant was bad", "Jane Schmoe", 1);
+    Restaurant testRestaurant = new Restaurant("Chipotle", 1);
+    Review review = new Review("This restaurant was good", "Joe Schmoe", 4, testRestaurant);
+    Review review1 = new Review("This restaurant was bad", "Jane Schmoe", 1, testRestaurant);
     testRestaurant.addReview(review);
     testRestaurant.addReview(review1);
 
     assertEquals(
         "testUpdateStars_AddMultipleReview should return: ",
-        2.7,
+        2.5,
         testRestaurant.getStars(),
         delta
     );

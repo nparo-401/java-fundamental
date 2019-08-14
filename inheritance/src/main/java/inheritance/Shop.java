@@ -2,19 +2,25 @@ package inheritance;
 
 import java.util.LinkedList;
 
-public class Restaurant implements Reviewable {
+public class Shop implements Reviewable {
   private String name;
+  private String description;
   private double stars = 0.0;
   private int priceCategory;
   private LinkedList<Review> reviews = new LinkedList<>();
 
-  Restaurant(String name, int priceCategory) {
+  Shop(String name, String description, int priceCategory) {
     this.name = name;
+    this.description = description;
     this.priceCategory = Math.min(priceCategory, 4);
   }
 
   public String getName() {
     return this.name;
+  }
+
+  public String getDescription() {
+    return this.description;
   }
 
   public double getStars() {
@@ -25,18 +31,26 @@ public class Restaurant implements Reviewable {
     return this.priceCategory;
   }
 
-  private String getPriceAsChar(int numChars){
+  public String getPriceAsChar(int numChars){
     return new String(new char[numChars]).replace("\0", "$");
   }
 
   public void addReview(Review review) {
     this.reviews.add(review);
-    review.setRestaurant(this);
+    review.setShop(this);
     updateStars();
   }
 
   public LinkedList<Review> getReviews() {
     return this.reviews;
+  }
+
+  public String toReviewString() {
+    StringBuilder review = new StringBuilder();
+    for (int i = 0; i< getReviews().size(); i++) {
+      review.append(getReviews().get(i).toString());
+    }
+    return review.toString();
   }
 
   public void updateStars() {
@@ -49,24 +63,22 @@ public class Restaurant implements Reviewable {
     this.stars = current;
   }
 
-  public String toReviewString() {
-    StringBuilder review = new StringBuilder();
-    for (int i = 0; i< getReviews().size(); i++) {
-      review.append(getReviews().get(i).toString());
-    }
-    return review.toString();
-  }
-
+  @Override
   public String toString() {
-    if (this.stars == 0.0) {
+    if (this.stars != 0.0) {
       return String.format(
-          "%s is a %s price point",
-          getName(), getPriceAsChar(getPriceCategory())
+          "Name: %s\n" +
+          "Description: %s\n" +
+          "Price Category: %s\n" +
+          "Stars: %.1f\n",
+          getName(), getDescription(), getPriceAsChar(getPriceCategory()), getStars()
       );
     }
     return String.format(
-        "%s has a rating of %.1f stars and is a %s price point",
-        getName(), getStars(), getPriceAsChar(getPriceCategory())
+        "Name: %s\n" +
+        "Description: %s\n" +
+        "Price Category: %s\n",
+        getName(), getDescription(), getPriceAsChar(getPriceCategory())
     );
   }
 }

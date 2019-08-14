@@ -54,18 +54,10 @@ public class App {
     }
 
     public static void main(String[] args) {
-//        System.out.println(linterMessage("gates.js"));
-//        System.out.println();
-//        System.out.println(linterMessage("empty.js"));
-//        System.out.println();
-//        System.out.println(linterMessage("no-errors.js"));
-
-        // fib
-        double x = 1.6180;
-        double y = 1 - x;
-        int n = 4;
-
-        int answer = (int)Math.rint(((Math.pow(x, n) - Math.pow(y, n)) / Math.sqrt(5.0)));
-        System.out.println(answer);
+        System.out.println(linterMessage("gates.js"));
+        System.out.println();
+        System.out.println(linterMessage("empty.js"));
+        System.out.println();
+        System.out.println(linterMessage("no-errors.js"));
     }
 }

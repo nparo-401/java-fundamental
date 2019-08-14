@@ -109,8 +109,6 @@ public class TheaterTest {
     theater.addReview(review);
     theater.addReview(review1);
 
-    System.out.println(theater.toReviewString());
-
     assertEquals(
         "testToReviewString_MultipleReviews should return: ",
         "Author: Joe Schmoe\n" +

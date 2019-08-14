@@ -4,9 +4,7 @@ public class Review {
   private String body;
   private String author;
   private double stars;
-  private Restaurant restaurant;
-  private Shop shop;
-  private Theater theater;
+  private Reviewable reviewable;
   private String movie;
 
 //  Constructors
@@ -16,34 +14,15 @@ public class Review {
     this.stars = Math.min(stars, 5.0);
   }
 
-  Review(String body, String author, double stars, Restaurant restaurant) {
-    this.body = body;
-    this.author = author;
-    this.stars = Math.min(stars, 5.0);
-    this.restaurant = restaurant;
+  Review(String body, String author, double stars, Reviewable reviewable) {
+    this(body, author, stars);
+    this.reviewable = reviewable;
   }
 
-  Review(String body, String author, double stars, Shop shop) {
-    this.body = body;
-    this.author = author;
-    this.stars = Math.min(stars, 5.0);
-    this.shop = shop;
-  }
-
-  Review(String body, String author, double stars, Theater theater) {
-    this.body = body;
-    this.author = author;
-    this.stars = Math.min(stars, 5.0);
-    this.theater = theater;
-  }
-
-  Review(String body, String author, double stars, Theater theater, String movieTitle) {
-    this.body = body;
-    this.author = author;
-    this.stars = Math.min(stars, 5.0);
-    this.theater = theater;
+  Review(String body, String author, double stars, Reviewable reviewable, String movieTitle) {
+    this(body, author, stars, reviewable);
     this.movie = movieTitle;
-    this.theater.addMovie(movieTitle);
+    ((Theater)this.reviewable).addMovie(movieTitle);
   }
 
 //  Methods
@@ -63,28 +42,12 @@ public class Review {
     return this.movie;
   }
 
-  public void setRestaurant(Restaurant restaurant) {
-    this.restaurant = restaurant;
+  void setReviewable(Reviewable reviewable) {
+    this.reviewable = reviewable;
   }
 
-  public Restaurant getRestaurant() {
-    return this.restaurant;
-  }
-
-  public void setShop(Shop shop) {
-    this.shop = shop;
-  }
-
-  public Shop getShop() {
-    return this.shop;
-  }
-
-  public void setTheater(Theater theater) {
-    this.theater = theater;
-  }
-
-  public Theater getTheater() {
-    return this.theater;
+  public Reviewable getReviewable() {
+    return this.reviewable;
   }
 
   public String toString() {

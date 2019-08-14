@@ -15,10 +15,12 @@ public class Restaurant implements Reviewable {
   }
 
 //  Methods
+  @Override
   public String getName() {
     return this.name;
   }
 
+  @Override
   public double getStars() {
     return this.stars;
   }
@@ -31,24 +33,29 @@ public class Restaurant implements Reviewable {
     return new String(new char[numChars]).replace("\0", "$");
   }
 
+  @Override
   public void addReview(Review review) {
     this.reviews.add(review);
-    review.setRestaurant(this);
+    review.setReviewable(this);
     updateStars();
   }
 
+  @Override
   public LinkedList<Review> getReviews() {
     return this.reviews;
   }
 
+  @Override
   public String toReviewString() {
+    LinkedList<Review> reviews = getReviews();
     StringBuilder review = new StringBuilder();
-    for (int i = 0; i< getReviews().size(); i++) {
-      review.append(getReviews().get(i).toString());
+    for (Review value : reviews) {
+      review.append(value.toString());
     }
     return review.toString();
   }
 
+  @Override
   public void updateStars() {
     double current = 0.0;
     for (int i = 0; i < getReviews().size(); i++) {
@@ -59,6 +66,7 @@ public class Restaurant implements Reviewable {
     this.stars = current;
   }
 
+  @Override
   public String toString() {
     if (this.stars == 0.0) {
       return String.format(

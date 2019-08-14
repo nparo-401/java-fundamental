@@ -26,10 +26,13 @@
 #### Methods:
 **Reviewable**
 * Methods:
-  * `addReview(Review review)`
-  * `updateStars()`
-  * `toReviewString()`
-  * `toString()`
+  * `public String getName()`
+  * `public double getStars()`
+  * `public void addReview(Review review)`
+  * `public LinkedList<Review> getReviews()`
+  * `public void updateStars()`
+  * `public String toReviewString()`
+  * `public String toString()`
 
 **Restaurant**
 * Variables:

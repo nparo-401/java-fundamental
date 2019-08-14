@@ -8,11 +8,13 @@ public class Restaurant implements Reviewable {
   private int priceCategory;
   private LinkedList<Review> reviews = new LinkedList<>();
 
+//  Constructor
   Restaurant(String name, int priceCategory) {
     this.name = name;
     this.priceCategory = Math.min(priceCategory, 4);
   }
 
+//  Methods
   public String getName() {
     return this.name;
   }
@@ -39,6 +41,14 @@ public class Restaurant implements Reviewable {
     return this.reviews;
   }
 
+  public String toReviewString() {
+    StringBuilder review = new StringBuilder();
+    for (int i = 0; i< getReviews().size(); i++) {
+      review.append(getReviews().get(i).toString());
+    }
+    return review.toString();
+  }
+
   public void updateStars() {
     double current = 0.0;
     for (int i = 0; i < getReviews().size(); i++) {
@@ -47,14 +57,6 @@ public class Restaurant implements Reviewable {
     current /= (getReviews().size());
     current = Math.round(current * 10.0) / 10.0;
     this.stars = current;
-  }
-
-  public String toReviewString() {
-    StringBuilder review = new StringBuilder();
-    for (int i = 0; i< getReviews().size(); i++) {
-      review.append(getReviews().get(i).toString());
-    }
-    return review.toString();
   }
 
   public String toString() {

@@ -9,12 +9,14 @@ public class Shop implements Reviewable {
   private int priceCategory;
   private LinkedList<Review> reviews = new LinkedList<>();
 
+// Constructor
   Shop(String name, String description, int priceCategory) {
     this.name = name;
     this.description = description;
     this.priceCategory = Math.min(priceCategory, 4);
   }
 
+//  Methods
   public String getName() {
     return this.name;
   }

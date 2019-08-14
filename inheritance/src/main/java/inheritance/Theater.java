@@ -8,10 +8,12 @@ public class Theater implements Reviewable {
   private LinkedList<String> movies = new LinkedList<>();
   private LinkedList<Review> reviews = new LinkedList<>();
 
+//  Constructor
   Theater(String name) {
     this.name = name;
   }
 
+//  Methods
   public String getName() {
     return this.name;
   }

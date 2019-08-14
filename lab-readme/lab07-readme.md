@@ -24,17 +24,18 @@
     * [TheaterTest.java](../inheritance/src/test/java/inheritance/TheaterTest.java)
 
 #### Methods:
-**Reviewable**
+**Instance Reviewable**
 * Methods:
   * `public String getName()`
   * `public double getStars()`
+  * `default void addMovie(String movieTitle) {}`
   * `public void addReview(Review review)`
   * `public LinkedList<Review> getReviews()`
   * `public void updateStars()`
   * `public String toReviewString()`
   * `public String toString()`
 
-**Restaurant**
+**Class Restaurant**
 * Variables:
   * `String name`
   * `double stars`
@@ -63,14 +64,12 @@
   * `toString()`
     * Returns a formated string for the restaurant
 
-**Review**
+**Class Review**
 * Variables:
   * `String body`
   * `String author`
   * `double stars`
-  * `Restaurant restaurant`
-  * `Shop shop`
-  * `Theater theater`
+  * `Reviewable reviewable`
   * `String movie`
 * Methods:
   * `getBody()`
@@ -81,10 +80,10 @@
     * returns the stars
   * `getMovie()`
     * returns the movie title
-  * `setRestaurant(Restaurant restaurant)`
-    * assigns an instance of the restaurant to the class variables of the current review
-  * `getRestaurant()`
-    * returns an instance of the restaurant assigned to the review
+  * `setReviewable(Reviewable reviewable)`
+    * assigns an instance of the reviewable to the class variables of the current review
+  * `getReviewable()`
+    * returns an instance of the reviewable assigned to the review
   * `setShop(Shop shop)`
     * assigns an instance of the shop to the class variables of the current review
   * `getShop()`
@@ -96,7 +95,7 @@
   * `toString()`
     * returns the review as an organized string
 
-**Shop**
+**Class Shop**
 * Variables:
   * `String name`
   * `String description`
@@ -128,7 +127,7 @@
   * `toString()`
     * Returns a formated string for the shop
 
-**Theater**
+**Class Theater**
 * Variables:
   * `String name`
   * `double stars`

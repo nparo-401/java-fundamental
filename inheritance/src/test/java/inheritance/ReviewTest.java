@@ -62,7 +62,7 @@ public class ReviewTest {
     assertEquals(
         "testGetRestaurant should return: ",
         "Chipotle has a rating of 2.0 stars and is a $ price point",
-        review.getRestaurant().toString()
+        review.getReviewable().toString()
     );
   }
 
@@ -78,7 +78,7 @@ public class ReviewTest {
             "Description: Place of Time\n" +
             "Price Category: $$\n" +
             "Stars: 3.0\n",
-        review.getShop().toString()
+        review.getReviewable().toString()
     );
   }
 
@@ -93,7 +93,7 @@ public class ReviewTest {
         "Name: Grand Hammer\n" +
             "Stars: 3.0\n" +
             "Movies: Hammer Time\n",
-        review.getTheater().toString()
+        review.getReviewable().toString()
     );
   }
 

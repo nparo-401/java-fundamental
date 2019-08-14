@@ -20,7 +20,7 @@
   * `String name`
   * `double stars`
   * `String priceCategory`
-  * `ArrayList<Review> reviews`
+  * `LinkedList<Review> reviews`
 * Methods:
   * `getName()`
     * returns the name of the restaurant
@@ -29,9 +29,11 @@
   * `getPriceCategory`
     * returns the price category of the restaurant
   * `addReview(Review review)`
-    * adds a new review to the reviews ArrayList
+    * adds a new review to the reviews LinkedList
+    * calls the `addRestaurant()` to assign a instance of the current restaurant to the `Review` class
+    * calls `updateStars()`
   * `getReview()`
-    * returns an ArrayList<Review> of the reviews
+    * returns an LinkedList<Review> of the reviews
   * `updateStars()`
     * updates the star count as new reviews are added to the review list
   * `reviewToString()`
@@ -45,6 +47,7 @@
   * `String body`
   * `String author`
   * `double stars`
+  * `Restaurant restaurant`
 * Methods:
   * `getBody()`
     * returns the body of the review
@@ -52,5 +55,9 @@
     * returns the author
   * `getStars()`
     * returns the stars
+  * `setRestaurant(Restaurant restaurant)`
+    * assigns an instance of the restaurant to the class variables of the current review
+  * `getRestaurant()`
+    * returns an instance of the restaurant assigned to the review
   * `toReviewString()`
     * returns the review as an organized string

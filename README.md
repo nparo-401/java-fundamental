@@ -11,3 +11,4 @@ Code Fellows 401d5 labs 1-10
 * [Lab 07: Composition and Inheritance, part 2](lab-readme/lab07-readme.md)
 * [Lab 08: Quotes](https://github.com/nparo-401/quotes/blob/master/README.md)
 * [Lab 09: Potent Quotables](https://github.com/nparo-401/quotes/blob/master/README.md)
+* [Lab 10: Stacks and Queues](https://github.com/nparo-401/data-structures-and-algorithms/blob/master/challenge-readme/stacks-and-queues.md)
